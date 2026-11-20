@@ -18,6 +18,9 @@ import streamlit as st
 
 load_dotenv()
 
+# Type alias for key pair
+TupleKeys = tuple[Optional[str], Optional[str]]
+
 
 def load_api_keys() -> TupleKeys:
     """
@@ -38,10 +41,6 @@ def load_api_keys() -> TupleKeys:
             pass
 
     return gemini_key, maps_key
-
-
-# Type alias for key pair
-TupleKeys = tuple[Optional[str], Optional[str]]
 
 
 def get_image_geotag(image: Image.Image) -> Optional[Dict[str, float]]:
